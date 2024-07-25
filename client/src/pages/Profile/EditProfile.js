@@ -16,7 +16,7 @@ const EditProfile = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/get-edit-profile",
+        "/api/user/get-edit-profile",
         { userId: params.userId },
         {
           headers: {

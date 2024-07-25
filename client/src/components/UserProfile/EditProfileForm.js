@@ -17,7 +17,7 @@ const EditProfileForm = ({ initialValues }) => {
       dispatch(showLoading());
       console.log(values);
       const response = await axios.post(
-        "http://localhost:5000/api/user/edit-profile",
+        "/api/user/edit-profile",
         {
           userId: user._id,
           ...values,

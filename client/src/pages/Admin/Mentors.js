@@ -15,7 +15,7 @@ const Mentors = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/admin/change-mentor-status",
+        "/api/admin/change-mentor-status",
         {
           mentorId: mentorId,
           status: status,
@@ -82,14 +82,11 @@ const Mentors = () => {
   const getMentors = async () => {
     try {
       dispatch(showLoading());
-      const response = await axios.get(
-        "http://localhost:5000/api/admin/get-mentors",
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      const response = await axios.get("/api/admin/get-mentors", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.data.success) {
         setMentors(response.data.data);
         dispatch(hideLoading());

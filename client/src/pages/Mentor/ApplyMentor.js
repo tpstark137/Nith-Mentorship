@@ -17,7 +17,7 @@ const ApplyMentor = () => {
       dispatch(showLoading());
       console.log(values);
       const response = await axios.post(
-        "http://localhost:5000/api/user/apply-mentor",
+        "/api/user/apply-mentor",
         {
           userId: user._id,
           ...values,

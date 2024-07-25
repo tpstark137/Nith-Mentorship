@@ -14,7 +14,7 @@ function ProtectedRoutes(props) {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/get-user-by-id",
+        "/api/user/get-user-by-id",
         {},
         {
           headers: {

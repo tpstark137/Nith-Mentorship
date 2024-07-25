@@ -14,14 +14,11 @@ const Home = () => {
   const getMentors = async () => {
     dispatch(showLoading());
     try {
-      const response = await axios.get(
-        "http://localhost:5000/api/admin/approved-mentors",
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      const response = await axios.get("/api/admin/approved-mentors", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.data.success) {
         setMentors(response.data.data);
         dispatch(hideLoading());

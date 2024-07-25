@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../../redux/alertSlice";
 import { useParams } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const ApplyAppointment = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const ApplyAppointment = () => {
       dispatch(showLoading());
       const studentId = user._id;
       const response = await axios.post(
-        "http://api/user/book-appointment",
+        "/user/book-appointment",
         {
           studentId: studentId,
           mentorId: mentorId,
@@ -42,7 +43,7 @@ const ApplyAppointment = () => {
     dispatch(showLoading());
     try {
       const response = await axios.post(
-        "http://api/mentor/get-mentor-data",
+        "/mentor/get-mentor-data",
         {
           mentorId: mentorId,
         },
@@ -66,7 +67,7 @@ const ApplyAppointment = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://api/mentor/check-available-slots",
+        "/mentor/check-available-slots",
         {},
         {
           headers: {

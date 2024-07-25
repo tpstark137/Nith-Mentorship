@@ -17,7 +17,7 @@ const Notifications = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/mark-notification-seen",
+        "/api/user/mark-notification-seen",
         { userId: user._id },
         {
           headers: {
@@ -41,7 +41,7 @@ const Notifications = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/delete-all-notification",
+        "/api/user/delete-all-notification",
         { userId: user._id },
         {
           headers: {
