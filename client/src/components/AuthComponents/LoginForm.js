@@ -16,7 +16,7 @@ const LoginForm = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "https://nith-mentorship-server.vercel.app/api/user/login",
+        "http://localhost:5000/api/user/login",
         e
       );
       dispatch(hideLoading());

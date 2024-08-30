@@ -18,7 +18,7 @@ const ApplyAppointment = () => {
       dispatch(showLoading());
       const studentId = user._id;
       const response = await axios.post(
-        "/user/book-appointment",
+        "http://localhost:5000/api/user/book-appointment",
         {
           studentId: studentId,
           mentorId: mentorId,
@@ -43,7 +43,7 @@ const ApplyAppointment = () => {
     dispatch(showLoading());
     try {
       const response = await axios.post(
-        "/mentor/get-mentor-data",
+        "http://localhost:5000/api/mentor/get-mentor-data",
         {
           mentorId: mentorId,
         },
@@ -67,7 +67,7 @@ const ApplyAppointment = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/mentor/check-available-slots",
+        "http://localhost:5000/api/mentor/check-available-slots",
         {},
         {
           headers: {

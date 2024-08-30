@@ -15,7 +15,7 @@ const Mentors = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/admin/change-mentor-status",
+        "http://localhost:5000/api/admin/change-mentor-status",
         {
           mentorId: mentorId,
           status: status,

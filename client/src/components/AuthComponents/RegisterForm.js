@@ -15,7 +15,7 @@ const RegisterForm = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "https://nith-mentorship-server.vercel.app/api/user/register",
+        "http://localhost:5000/api/user/register",
         e
       );
       dispatch(hideLoading());
